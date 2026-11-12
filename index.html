@@ -3,176 +3,233 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>手机分期资产 · 投资方法</title>
-<meta name="description" content="基金如何承做手机分期资产：看底层是否真实，损失是否走得完，钱和汇出是否对得上。" />
+<title>手机分期资产投资说明</title>
+<meta name="description" content="基金以手机分期应收款为基础资产，向持牌主体提供结构化融资。本页说明资产、交易结构、收益口径、投资准入与存续期管理。" />
 <style>
   :root {
     color-scheme: light;
-    --bg: #f3f1eb;
-    --paper: #fffcf7;
-    --ink: #1c1915;
-    --muted: #5e584e;
-    --line: #e2ddd2;
+    --bg: #ffffff;
+    --ink: #1a1a1a;
+    --muted: #5c5c5c;
+    --line: #e4e4e4;
     --accent: #1e3a5f;
-    --deep: #8c3a2f;
-    --mid: #e0a36a;
-    --light: #f4ede4;
+    --head: #f4f6f8;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
     background: var(--bg);
     color: var(--ink);
-    font: 17px/1.65 "Iowan Old Style", "Palatino Linotype", Palatino, "Songti SC", serif;
+    font: 16px/1.6 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", sans-serif;
   }
-  main { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
-  header { margin-bottom: 36px; }
+  main { max-width: 880px; margin: 0 auto; padding: 40px 28px 72px; }
+  header { margin-bottom: 8px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
   .kicker {
-    margin: 0 0 10px;
-    font: 12px/1.4 "Avenir Next", "PingFang SC", sans-serif;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+    margin: 0 0 8px;
+    font-size: 13px;
+    line-height: 1.4;
     color: var(--accent);
   }
-  h1 { margin: 0 0 14px; font-size: 40px; line-height: 1.15; font-weight: 600; }
-  .lead { margin: 0; font-size: 20px; color: var(--muted); }
-  section { margin-top: 42px; }
+  h1 { margin: 0 0 12px; font-size: 28px; line-height: 1.3; font-weight: 600; }
+  .lead { margin: 0; max-width: 40em; }
   h2 {
-    margin: 0 0 12px;
-    font: 600 13px/1.4 "Avenir Next", "PingFang SC", sans-serif;
-    letter-spacing: 0.08em;
+    margin: 36px 0 10px;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 600;
     color: var(--accent);
   }
-  h3 { margin: 22px 0 6px; font-size: 20px; }
-  p { margin: 0 0 12px; }
-  ol, ul { margin: 0; padding-left: 1.2em; }
-  li { margin: 0 0 8px; }
-  .panel {
-    background: var(--paper);
-    border: 1px solid var(--line);
-    padding: 18px 18px 8px;
-    margin-top: 14px;
+  p { margin: 0 0 10px; }
+  table { width: 100%; border-collapse: collapse; margin: 0 0 4px; }
+  th, td {
+    text-align: left;
+    vertical-align: top;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--line);
   }
-  .bridge { list-style: none; padding: 0; margin: 8px 0 0; }
-  .bridge li {
+  th {
+    background: var(--head);
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--line);
+  }
+  td:first-child, th:first-child { width: 168px; padding-left: 0; }
+  th:first-child { padding-left: 12px; }
+  td:first-child { font-weight: 600; }
+  sup { line-height: 0; }
+  sup a {
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0 1px;
+  }
+  .note { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+  .notes { margin: 8px 0 0; padding: 0; list-style: none; }
+  .notes li {
     display: grid;
-    grid-template-columns: 92px 1fr;
-    gap: 12px;
-    padding: 10px 0;
-    border-top: 1px solid var(--line);
+    grid-template-columns: 28px 1fr;
+    gap: 6px;
+    margin: 0 0 10px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.55;
   }
-  .bridge li:first-child { border-top: 0; }
-  .tag {
-    font: 12px/1.4 "Avenir Next", "PingFang SC", sans-serif;
-    letter-spacing: 0.04em;
-    color: var(--accent);
-    padding-top: 4px;
-  }
-  .legend { display: flex; gap: 18px; align-items: center; margin-top: 8px; }
-  .swatch { width: 28px; height: 14px; }
-  .legend span { font: 13px/1.4 "Avenir Next", "PingFang SC", sans-serif; color: var(--muted); }
-  table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 16px; }
-  th, td { text-align: left; vertical-align: top; padding: 8px 10px 8px 0; border-top: 1px solid var(--line); }
-  th { font: 12px/1.4 "Avenir Next", "PingFang SC", sans-serif; color: var(--muted); font-weight: 600; }
+  .notes a { color: var(--muted); }
   footer {
-    margin-top: 48px;
-    padding-top: 16px;
+    margin-top: 28px;
+    padding-top: 14px;
     border-top: 1px solid var(--line);
     color: var(--muted);
-    font: 13px/1.5 "Avenir Next", "PingFang SC", sans-serif;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  @media (max-width: 640px) {
+    main { padding: 28px 16px 56px; }
+    h1 { font-size: 24px; }
+    td:first-child, th:first-child { width: 96px; }
   }
 </style>
 </head>
 <body>
 <main>
   <header>
-    <p class="kicker">给投资人</p>
-    <h1>手机分期资产怎么做</h1>
-    <p class="lead">我们买的是手机分期形成的应收。先确认底层是真实的，损失是走得完的，钱和汇出是对得上的。合作方承担劣后或提供主体增信。额度先做到可以上手，运营和数据贴上之后再扩。</p>
+    <p class="kicker">投资方法说明</p>
+    <h1>手机分期资产投资说明</h1>
+    <p class="lead">基金以手机分期合同项下应收款为基础资产<sup><a href="#n1">1</a></sup>，向资产所在地持牌主体提供结构化融资。还款来源为基础资产回款。</p>
   </header>
 
   <section>
-    <h2>01 · 资产</h2>
-    <p>客户签的是分期买卖。放款和贷后由持牌主体在当地完成。期限按合作方实际在售的产品。新机和二手分开成池，二手的逾期、回收和货权单独看。</p>
-    <p>同一笔订单会同时出现在获客来源、机型结构和成交渠道里。这三套数各看各的，不能加总。押金抵末期待用，不计入收入。</p>
-  </section>
-
-  <section>
-    <h2>02 · 结构</h2>
-    <div class="panel">
-      <ul class="bridge">
-        <li><span class="tag">借款主体</span><span>持有牌照或不反对函、作为借款人的公司。报表、负债和账户按这家公司自己的口径。</span></li>
-        <li><span class="tag">担保主体</span><span>另列。保证、回购或差额补足由担保主体出具。借款主体自己不出这张保证。</span></li>
-        <li><span class="tag">投资结构</span><span>信托或 SPV 用来让投资人看见底层应收是真实存在的，并且能对应到每一台设备。</span></li>
-        <li><span class="tag">切分</span><span>合作资产按大盘的平均表现切。若只切品牌或门店，要说明这段历史是不是差于大盘。</span></li>
-        <li><span class="tag">节奏</span><span>先批一个可以上手的额度，看运营和接口数据是否贴上，再扩额。</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>03 · 投前</h2>
-    <p>材料对上之前，不把线下拜访当成结论。投前看四件事。</p>
-    <ol>
-      <li>一笔已经放款、至少还过一期的真实订单。现金怎么走，要和产品里的标准息费规则是同一套。</li>
-      <li>收益桥。收入、风险成本和直接成本拆开，分母写明。一个单独的净利比例不够。</li>
-      <li>资产走势。Vintage、入催、催回按放款月或到期月铺开。没走完的月份留空。当前不良和终损要写明是已经观察到的，还是外推。</li>
-      <li>勾稽。在贷余额对上累放、结清和核销，并写明币种和汇率。锁机到回款、客诉、收款账户和资金进出放在一起看。</li>
-    </ol>
-  </section>
-
-  <section>
-    <h2>04 · 收益怎么读</h2>
-    <p>分母是该月放款本金。带百分号的数，2 表示 2%。人员、房租、税和汇兑记在自然月，不摊回每一个放款月。</p>
-    <div class="panel">
-      <ul class="bridge">
-        <li><span class="tag">收入</span><span>实收收费，加逾期收费，再加结清调整。提前结清少收的部分记负数。合同上的应收只作对照，不拿来倒挤实收。</span></li>
-        <li><span class="tag">风险成本</span><span>本金损失加收费损失。本金损失按约定的不良和核销定义，并扣除处置机器收回的净额。</span></li>
-        <li><span class="tag">息差</span><span>收入减去风险成本。本金损失还没按定义算完时，这一行留空。</span></li>
-        <li><span class="tag">直接成本</span><span>导购提成、收款通道、资金成本、随单运营。</span></li>
-        <li><span class="tag">毛收益</span><span>息差减去直接成本。这是税和固定成本之前的结果。</span></li>
-        <li><span class="tag">对照年化</span><span>毛收益比例 × 12 / 已结清资产的平均实还月数。只作对照。合同利率和对外口径另列。</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>05 · 投后</h2>
-    <p>放款月的经营损益按项目纵排、月份横排。每一行有自己的趋势，表下同时看息差、毛收益和本金损失。</p>
-    <p>Vintage、入催和催回用热力图看走势，不必逐格对数字。颜色越深越差。新机和二手的 Vintage 各自成图，避免一边把另一边整片染深。</p>
-    <div class="legend">
-      <div class="swatch" style="background:#f4ede4;border:1px solid #e2ddd2"></div>
-      <div class="swatch" style="background:#e0a36a"></div>
-      <div class="swatch" style="background:#8c3a2f"></div>
-      <span>由浅到深表示由好到差。入催和逾期越高越深，催回越低越深。空格不着色。</span>
-    </div>
+    <h2>一、投资要点</h2>
     <table>
-      <thead><tr><th>看什么</th><th>怎么看</th></tr></thead>
+      <thead><tr><th>项目</th><th>安排</th></tr></thead>
       <tbody>
-        <tr><td>账龄</td><td>每个放款月在 MOB1 到 MOB12 的逾期比例。没走到的月份留空，不填 0。</td></tr>
-        <tr><td>入催</td><td>到期本金里逾期满 1 天的部分。大盘、首期、新机、二手放在一起比。</td></tr>
-        <tr><td>催回</td><td>逾期之后第 5 天到第 90 天收回了多少，另看锁机后 30 天的回款。</td></tr>
-        <tr><td>在贷</td><td>按未逾期和逾期阶段拆开，含逾期，不含已核销。要能和累放、结清、核销对上。</td></tr>
-        <tr><td>外汇</td><td>放款汇率、回收汇率，以及还没收回余额的重估。汇出路径和在途时间单独记。</td></tr>
+        <tr><td>基础资产</td><td>终端客户分期购买手机所形成的应收款。</td></tr>
+        <tr><td>借款人</td><td>资产所在地持牌主体<sup><a href="#n2">2</a></sup>。</td></tr>
+        <tr><td>增信</td><td>保证、回购或差额补足，由独立于借款人的增信主体出具。</td></tr>
+        <tr><td>载体</td><td>信托，或特殊目的载体（SPV）<sup><a href="#n3">3</a></sup>。基础资产可按单笔设备核对。</td></tr>
+        <tr><td>额度</td><td>设立初始额度。运营安排与数据接口核验完成后增额。</td></tr>
+        <tr><td>币种与汇兑</td><td>按资产所在地币种记账。放款汇率、回收汇率、余额重估及汇出在途单独列示。</td></tr>
       </tbody>
     </table>
   </section>
 
   <section>
-    <h2>06 · 风险点</h2>
-    <p>业务规模本身不是我们最先要证明的事。材料齐了之后，线下看的是这些点能不能经得起核对。</p>
-    <ul>
-      <li>锁怎么装上、逾期后限制到什么程度、还款后谁来解开、手机还给谁。</li>
-      <li>客诉占放款和在贷的比例，有没有升到品牌或监管，回复是否按时。</li>
-      <li>贷后是电话提醒、上门，还是委托第三方。拆机、转卖由谁发现，损失由谁承担。</li>
-      <li>二手的货权和完税。机器未完税时，锁机、取回和资产记在谁的账上。</li>
-      <li>客户还款进哪个账户，付给门店从哪个账户出。资金怎么进入当地，利润怎么汇出。</li>
-    </ul>
-    <p>合作方赚得到钱，我们才加杠杆。优先劣后可以谈，底层资产的表现要先站得住。</p>
+    <h2>二、基础资产</h2>
+    <table>
+      <thead><tr><th>项目</th><th>口径</th></tr></thead>
+      <tbody>
+        <tr><td>合同</td><td>终端客户签署分期买卖合同。放款与贷后由持牌主体在当地执行。</td></tr>
+        <tr><td>期限</td><td>按在售产品的合同期限列示。</td></tr>
+        <tr><td>分池</td><td>新机与二手设备分池。逾期、回收、权属及完税分池列示。</td></tr>
+        <tr><td>获客来源</td><td>门店导购、自然到店、线上投放及其他，并列示获客成本。单独成表。</td></tr>
+        <tr><td>机型结构</td><td>品牌、型号、新机或二手。单独成表。</td></tr>
+        <tr><td>成交渠道</td><td>线上为应用程序及移动网页；线下为门店。单独成表。</td></tr>
+        <tr><td>汇总</td><td>同一订单可同时计入以上三表。三表各自汇总。</td></tr>
+        <tr><td>保证金</td><td>客户保证金用于抵扣末期应付款，列示为负债或应收抵减。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>三、交易结构</h2>
+    <table>
+      <thead><tr><th>项目</th><th>安排</th></tr></thead>
+      <tbody>
+        <tr><td>借款人</td><td>持有当地业务许可，或持有监管机构无异议函的公司。财务报表、有息负债及银行账户以该公司单体口径列示。</td></tr>
+        <tr><td>增信主体</td><td>出具保证、回购或差额补足。与借款人分列。</td></tr>
+        <tr><td>入池标准</td><td>以资产池整体的历史表现为基准。按品牌或门店筛选时，单独披露该子集与资产池的表现差异。</td></tr>
+        <tr><td>分层</td><td>优先与劣后的安排，以基础资产历史表现，以及未使用杠杆时的边际收益率已核验为前提。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>四、收益口径</h2>
+    <p>分母为对应月份的放款本金。比率以百分数表示<sup><a href="#n4">4</a></sup>。</p>
+    <table>
+      <thead><tr><th>项目</th><th>计算</th></tr></thead>
+      <tbody>
+        <tr><td>实收收益率<sup><a href="#n5">5</a></sup></td><td>（实收收费 + 逾期收费实收 + 提前结清差额）/ 放款本金</td></tr>
+        <tr><td>信用成本率<sup><a href="#n6">6</a></sup></td><td>（本金损失 + 收费损失）/ 放款本金</td></tr>
+        <tr><td>风险调整后收益率<sup><a href="#n7">7</a></sup></td><td>实收收益率 − 信用成本率</td></tr>
+        <tr><td>变动成本率<sup><a href="#n8">8</a></sup></td><td>（渠道佣金 + 支付手续费 + 资金成本 + 单笔运营成本）/ 放款本金</td></tr>
+        <tr><td>边际收益率<sup><a href="#n9">9</a></sup></td><td>风险调整后收益率 − 变动成本率</td></tr>
+        <tr><td>简单年化收益率<sup><a href="#n10">10</a></sup></td><td>边际收益率 × 12 / 平均实还月数</td></tr>
+      </tbody>
+    </table>
+    <p class="note">按自然月列示的科目：人员薪酬、租金、税费、汇兑损益。</p>
+  </section>
+
+  <section>
+    <h2>五、投资准入</h2>
+    <p>书面材料完成勾稽后，开展现场核查。</p>
+    <table>
+      <thead><tr><th>事项</th><th>标准</th></tr></thead>
+      <tbody>
+        <tr><td>单笔合同</td><td>抽取已放款且至少完成一期还款的订单。现金流与产品收费规则一致。</td></tr>
+        <tr><td>收益拆解</td><td>按第四节列示实收收益率、信用成本率与变动成本率，并注明分母。</td></tr>
+        <tr><td>队列数据</td><td>放款队列（Vintage）<sup><a href="#n11">11</a></sup>、入催率<sup><a href="#n12">12</a></sup>、回收率（Cure）<sup><a href="#n13">13</a></sup>按放款月或到期月列示。未届满月份留空。时点不良率与累计损失率注明为已实现观察值或外推值。</td></tr>
+        <tr><td>余额与资金</td><td>在贷余额<sup><a href="#n14">14</a></sup>与累计放款、结清、核销勾稽。并列示币种、汇率、设备锁定、投诉、收款账户及资金流向。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>六、存续期管理</h2>
+    <table>
+      <thead><tr><th>报表</th><th>列示</th></tr></thead>
+      <tbody>
+        <tr><td>经营损益</td><td>科目列于纵栏，放款月列于横栏。各科目附趋势。并列示风险调整后收益率、边际收益率及本金损失。</td></tr>
+        <tr><td>放款队列</td><td>各放款月至账龄月（MOB）<sup><a href="#n15">15</a></sup>第 12 月的逾期率。未届满月份留空。新机与二手分池。</td></tr>
+        <tr><td>入催率</td><td>资产池、首期、新机、二手分列。</td></tr>
+        <tr><td>回收率</td><td>逾期后第 5、10、15、30、60、90 日，以及设备锁定后 30 日。</td></tr>
+        <tr><td>在贷余额</td><td>按正常类及逾期阶段列示，范围为尚未核销的本金。与累计放款、结清、核销勾稽。</td></tr>
+        <tr><td>汇兑</td><td>放款汇率、回收汇率、未收回余额重估。汇出路径与在途时间单独列示。</td></tr>
+        <tr><td>色阶<sup><a href="#n16">16</a></sup></td><td>同一指标、同一资产池内，按指标恶化方向加深。空值留白。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>七、主要风险</h2>
+    <table>
+      <thead><tr><th>事项</th><th>核查要点</th></tr></thead>
+      <tbody>
+        <tr><td>设备锁定</td><td>锁定服务的提供方、逾期后的功能限制、还款后的解除权限、设备归还对象。</td></tr>
+        <tr><td>投诉与消费者保护</td><td>投诉笔数占放款笔数及在贷笔数的比例，升级至品牌方或监管机构的笔数，回复时效。</td></tr>
+        <tr><td>贷后处置</td><td>电话提醒、上门或外包的分工。设备拆解与转售的发现责任、损失承担主体。</td></tr>
+        <tr><td>二手设备</td><td>权属与完税状态。未完税设备的锁定、取回及入账主体。</td></tr>
+        <tr><td>资金与跨境</td><td>客户还款账户、向门店付款的账户、资金入境路径、利润汇出路径。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>附注</h2>
+    <ol class="notes">
+      <li id="n1"><span>1</span><span>基础资产，指持牌主体与终端客户签署分期买卖合同后形成的应收款。单笔核对要素包括设备标识、合同期限、应付款计划及还款记录。</span></li>
+      <li id="n2"><span>2</span><span>持牌主体，指在资产所在地具备开展该项业务的许可，或持有监管机构无异议函的公司。无异议函（No-Objection Letter），指监管机构就特定业务出具的不反对意见，其效力以当地监管文件为准。</span></li>
+      <li id="n3"><span>3</span><span>特殊目的载体（Special Purpose Vehicle，SPV），指为隔离基础资产设立的载体。本页所称信托，指以基础资产为信托财产的信托计划。两类载体均用于按单笔应收款及对应设备进行核对。</span></li>
+      <li id="n4"><span>4</span><span>比率以百分数表示。数值 2.00 的含义为 2.00%。</span></li>
+      <li id="n5"><span>5</span><span>实收收益率 =（实收收费 + 逾期收费实收 + 提前结清差额）/ 该月放款本金。提前结清差额为提前结清产生的收费差额，少收记负值。合同载明的应收收费单独列示，供与实收核对。</span></li>
+      <li id="n6"><span>6</span><span>信用成本率 =（本金损失 + 收费损失）/ 该月放款本金。本金损失按交易文件约定的不良认定及核销标准计量，并扣除设备处置回收净额。收费损失为已确认收费中予以核销的部分。</span></li>
+      <li id="n7"><span>7</span><span>风险调整后收益率 = 实收收益率 − 信用成本率。信用成本未按约定标准测算完成时，本项留空。</span></li>
+      <li id="n8"><span>8</span><span>变动成本率 =（渠道佣金 + 支付手续费 + 资金成本 + 单笔运营成本）/ 该月放款本金。渠道佣金指向门店导购、按放款笔支付的佣金。支付手续费按实际收款计。单笔运营成本指随放款笔数发生的运营支出。人员薪酬与租金见自然月科目。</span></li>
+      <li id="n9"><span>9</span><span>边际收益率 = 风险调整后收益率 − 变动成本率。计算至变动成本。税费与固定成本在其后按自然月列示。</span></li>
+      <li id="n10"><span>10</span><span>简单年化收益率 = 边际收益率 × 12 / 平均实还月数。平均实还月数为已结清资产自放款日至结清日的实际月数的平均值。</span></li>
+      <li id="n11"><span>11</span><span>放款队列（Vintage），指按放款月分组的资产组合。单元格为该队列在对应账龄月的逾期率。逾期率 = 逾期满 30 日的剩余本金 / 该月放款本金。未届满的账龄月留空。</span></li>
+      <li id="n12"><span>12</span><span>入催率 = 逾期达到 1 日的本金 / 当月到期本金。逾期天数（Days Past Due，DPD）自应还款日次日起算。本页入催对应 DPD1。首期指该笔资产的第一个还款期。</span></li>
+      <li id="n13"><span>13</span><span>回收率（Cure）。Cure<sub>N</sub> = 1 −（逾期第 N 日仍未偿还本金 / 逾期第 1 日本金）。N 取 5、10、15、30、60、90。设备锁定后 30 日回款率 = 锁定后 30 日内收回金额 / 锁定时点的逾期本金。</span></li>
+      <li id="n14"><span>14</span><span>在贷余额，指尚未核销的应收本金，包括正常类及各逾期阶段。在贷余额与累计放款、累计结清、累计核销相互核对，并注明币种及汇率。</span></li>
+      <li id="n15"><span>15</span><span>账龄月（Month on Book，MOB），指自放款月起算的观察月数。MOB1 为放款后第 1 个观察月。</span></li>
+      <li id="n16"><span>16</span><span>色阶用于同一指标、同一资产池内的横向比较。逾期率与入催率以较高数值为深色；回收率以较低数值为深色。新机与二手分池设色。空值留白。</span></li>
+    </ol>
   </section>
 
   <footer>
-    本页说明基金承做手机分期资产的方法，给投资人阅读。这里不放任何一家合作方的经营数字，也不对当地收费上限作法律意见。
+    声明：本页说明基金投资手机分期资产的方法，供机构投资人阅读。合作方经营数据及法律意见见专项文件。
   </footer>
 </main>
 </body>
